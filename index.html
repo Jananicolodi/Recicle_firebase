@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECICLE+</title>
+    <link rel="stylesheet" href="./source/mdl/material.min.css">
+    <script src="./source/mdl/material.min.js"></script>
+    <link rel="stylesheet" href="./source/mdl/fonts.css">
+    <link rel="manifest" href="./manifest.json">
+    <script type="module" src="./source/script/app.js"></script>
+    <!-- <link rel="manifest" href="./manifest.json"> -->
+    <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+    <script defer src="/source/script/init-firebase.js"></script>
+    <script src="/source/firebase_8.2.4/firebase.js"></script>
+    <script src="/source/firebase_8.2.4/firebase-app.js"></script>
+     <script src="/source/firebase_8.2.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+                        <script>
+                       firebase.auth().onAuthStateChanged((user) => {
+                      if (user) {
+                        alert("olá")
+                        var uid = user.uid;
+                        // ...
+                    } else {
+                        // User is signed out
+                        // ...
+                        alert("tchau")
+                      }
+                    });
+                        </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background: url('./source/files/sand.png') center / cover;
+            text-align: center;
+        }
+
+        .demo-layout-transparent {
+            background-color: rgb(255, 255, 255, 0.65);
+
+        }
+
+        .demo-layout-transparent .mdl-layout__header,
+        .demo-layout-transparent .mdl-layout__drawer-button,
+        ul.mdl-list li span button {
+            color: white;
+        }
+
+        .demo-list-two {
+            width: 300px;
+        }
+
+        .material-icons {
+            color: white;
+        }
+        header{
+            margin-top: 5%;
+        }
+
+        img.material-icons {
+            width: 30px;
+            height: 30px;
+            background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%);
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 16px;
+        }
+
+        span {
+           
+            width: 100%;
+            
+        }
+
+        span img {
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+        }
+        .mdl-layout__drawer-button {
+            border-radius: 30%;
+    color: #0c0c0c;
+    margin-top: 7.2%;
+    background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%);
+        }
+
+    </style>
+
+
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">RECICLE</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/login.html">Login</a>
+            <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/menu_lateral/">ABNT 1004</a>
+            <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/posts/calendario.html">Calendário de Coleta</a>
+            <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/posts/3rs.html">3 R'S</a>
+        </nav>
+    </div>
+    <!-- <div style="background-color: rgb(255, 255, 255, 0.8)"> -->
+        <header class="">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    <img src="/source/files/logo_recicle.png" alt="logo">
+                </span>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                    <ul class="demo-list-two mdl-list">
+                        
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/lixeira.png" alt="lixeira">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    href="./source/view/posts/?item=classificar">
+                                    Classificação do Resíduo
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/reciclar.png" alt="reciclar">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    href="./source/view/video/?item=reutilizar"></button>
+                                    Reutilize
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/interrogacao.png" alt="interrogacao">                                
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    href="./source/view/video/?item=curiosidades"></button>
+                                    Curiosidades
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/caminhao-de-lixo_semLinha.png"
+                                    alt="lixeiro">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    href="./source/view/residuo_panambi/"></button>
+                                    Resíduo em Panambi
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/telefone.png" alt="telefone">                                
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    href="./source/view/contato/"></button>
+                                    Entre em contato
+                                </a>
+                            </span>
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="" onclick="window. history. back()">
+                                <img class="material-icons" src="./source/files/seta.png" style="height: 20% !important ;width:20% !important;" alt="voltar">                                
+                              
+                            </span>
+                        </li>
+                        <li class="mdl-list__item">
+                            <span class="oi oi-arrow-circle-left">
+                                <!-- <img class="material-icons" src="./source/files/telefone.png" alt="telefone">                                 -->
+                                <!-- <a class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    href="./source/view/contato/?item=contato"></button>
+                                    Entre em contato
+                                </a> -->
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- </div> -->
+</body>
+
+</html>

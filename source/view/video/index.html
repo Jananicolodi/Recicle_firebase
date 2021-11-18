@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="../../mdl/material.min.css">
+    <script src="../../mdl/material.min.js"></script>
+    <link rel="stylesheet" href="../../mdl/fonts.css">
+</head>
+<style>
+    iframe{
+        width: 90%;
+    height: 30em;
+    }
+    
+    .material-icons {
+            color: white;
+        }
+        img.material-icons {
+            width: 60px;
+            height: 60px;
+            background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%);
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 16px;
+        }
+</style>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">RECICLE</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/login.html">Login</a>
+                <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/menu_lateral/">ABNT 1004</a>
+                <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/posts/calendario.html">Calendário de Coleta</a>
+                <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/posts/3rs.html">3 R'S</a>
+            </nav>
+        </div>
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span id="titulo" class="mdl-layout-title"><script>titulo</script></span>
+            </div>
+            <script>
+               let url = window.location.href
+               let split = url.split("=")
+                split.splice(split,1)
+                let titulo = split
+                document.getElementById("titulo").innerHTML = titulo
+            </script>
+        </header>
+        <main class="mdl-layout__content">  
+            <div class="page-content">
+            </div>
+        </main>
+        <footer>
+  
+            <span class="voltar" onclick="window. history. back()" style="text-align: center;cursor: pointer;">
+              <img class="material-icons" src="./../../files/seta.png"  alt="voltar">                                
+              
+            </span>
+          </footer>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+    <script defer src="../../script/init-firebase.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>

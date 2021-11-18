@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.79.0">
+  <link href="./source/files/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- <script src="./source/script/email.js"></script> -->
+  <script type="module" src="./source/script/app.js"></script>
+  <link rel="manifest" href="./manifest.json">
+  <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+  <script defer src="/source/script/init-firebase.js"></script>
+  <script src="/source/firebase_8.2.4/firebase.js"></script>
+  <script src="/source/firebase_8.2.4/firebase-app.js"></script>
+  <script src="/source/firebase_8.2.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+ 
+
+  <title>Login</title>
+
+
+
+  <style>
+      img.material-icons {
+            width: 30px;
+            height: 30px;
+            background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%);
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 16px;
+            margin-top: 8%;
+        }
+    button {
+      background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%) !important;
+      margin-top: 2%;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="./source/files/css/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  
+  <main class="form-signin">
+    <p id="message"></p>
+    <!-- <form method="POST"> -->
+      <img class="mb-4" src="./source/files/logo-512.png" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Realize o Login</h1>
+      <label for="inputEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="inputEmail" class="form-control"  placeholder="Digite seu e-mail" required autofocus>
+      <label for="inputPassword" class="visually-hidden">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Digite sua senha" required>
+      <div class="checkbox mb-3">
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" id="login" >Entrar</button>
+      <button class="w-100 btn btn-lg btn-primary">
+        <span class="" onclick="window. history. back()">
+          <img class="" src="./source/files/seta.png" style="height: 10% !important ;width:10% !important;" alt="voltar">                                
+        Voltar
+      </span>
+
+      </button>
+      <!-- <button class="w-100 btn btn-lg btn-primary" id="cadastro">Cadastrar</button> -->
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+    <!-- </form> -->
+  </main>
+</body>
+  <script>
+    let mail = document.getElementById('inputEmail')
+      let pass =  document.getElementById('inputPassword')
+      let email
+      let password
+    document.querySelector('button#login').addEventListener('click', () => {
+      email = mail.value;
+      password = pass.value;
+      //   alert(email)
+        // let email = 'janasnicolodi@gmail.com';
+        // let password = 'jn@912743';
+        firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((user) => {
+    window.location.href = "https://recicle-8f300.web.app/";   
+  
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert("informações incorretas")
+
+ 
+      });
+})
+    document.querySelector('button#cadastro').addEventListener('click', () => {
+      email = mail.value;
+      password = pass.value;
+        // let email = 'jananicolodi@gmail.com';
+        // let password = 'jn@912743';
+        alert(email)
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((user) => {
+     window.location.href = "https://recicle-8f300.web.app/";
+    // alert("oi")
+  
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert("informações inválidas")
+
+ 
+      });
+})
+  </script>
+
+
+</html>

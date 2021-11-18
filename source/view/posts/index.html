@@ -1,0 +1,166 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <style type="text/css">@-ms-viewport{width:auto!important;}</style>
+    <link rel="stylesheet" type="text/css" href="../../glider.js/glider.css" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../../mdl/material.min.css">
+  <script src="../../mdl/material.min.js"></script>
+  <link rel="stylesheet" href="../../mdl/fonts.css">
+    <script src="../../glider.js/glider.js"></script>
+  
+    <script defer src="../../script/init-firebase.js"></script>
+    <script>
+      window.addEventListener('load',function(){
+        document.querySelector('.glider').addEventListener('glider-slide-visible', function(event){
+            var glider = Glider(this);
+            console.log('Slide Visible %s', event.detail.slide)
+        });
+        document.querySelector('.glider').addEventListener('glider-slide-hidden', function(event){
+            console.log('Slide Hidden %s', event.detail.slide)
+        });
+        document.querySelector('.glider').addEventListener('glider-refresh', function(event){
+            console.log('Refresh')
+        });
+        document.querySelector('.glider').addEventListener('glider-loaded', function(event){
+            console.log('Loaded')
+        });
+
+        window._ = new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1, //'auto',
+            slidesToScroll: 1,
+            itemWidth: 150,
+            draggable: true,
+            scrollLock: false,
+            dots: '#dots',
+            rewind: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            },
+            responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToScroll: 'auto',
+                        itemWidth: 300,
+                        slidesToShow: 'auto',
+                        exactWidth: true
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToScroll: 4,
+                        slidesToShow: 4,
+                        dots: false,
+                        arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToScroll: 3,
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToScroll: 2,
+                        slidesToShow: 2,
+                        dots: false,
+                        arrows: false,
+                        scrollLock: true
+                    }
+                }
+            ]
+        });
+      });
+    </script>
+    <style type="text/css">
+      img.material-icons {
+            width: 60px;
+            height: 60px;
+            background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%);
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 16px;
+        }
+        .voltar{
+          padding-top: 5%;
+        }
+        * {
+            box-sizing: border-box
+        }
+        html, body {
+            width: 100%;
+            overflow: hidden;
+        }
+        .glider-contain {
+            width: 90%;
+            max-width: 997px;
+            margin: 0 auto;
+        }
+        .glider-slide {
+            min-height: 150px;
+        }
+        .glider-slide img {
+            width: 100%;
+        }
+        img{
+          padding-left: 2px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">RECICLE</span>
+          <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/login.html">Login</a>
+              <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/menu_lateral/">ABNT 1004</a>
+              <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/posts/calendario.html">Calendário de Coleta</a>
+              <a class="mdl-navigation__link" href="https://recicle-8f300.web.app/source/view/posts/3rs.html">3 R'S</a>
+          </nav>
+      </div>
+      <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+              <span id="titulo" class="mdl-layout-title"><script>titulo</script></span>
+          </div>
+          <script>
+             let url = window.location.href
+             let split = url.split("=")
+              split.splice(split,1)
+              // split.split("#")
+              let titulo = split
+              document.getElementById("titulo").innerHTML = titulo
+          </script>
+      </header>
+      <div class="glider-contain" style="margin-top: 10%; ">
+        <div class="glider">
+          <div><img alt="Organico" src="../../files/classificar/organico.jpeg"></div>
+          <div><img alt="Reciclavel" src="../../files/classificar/reciclavel.jpeg"></div>
+          <div><img alt="Vidro" src="../../files/classificar/vidro.jpeg"></div>
+          <div><img alt="Moveis" src="../../files/classificar/moveis.jpeg"></div>
+          <div><img alt="Nao devem ser descartados" src="../../files/classificar/nao_devem.jpeg"></div>
+          
+        </div>
+        <button class="glider-prev">&laquo;</button>
+        <button class="glider-next">&raquo;</button>
+        <div id="dots"></div>
+        <footer>
+  
+          <span class="voltar" onclick="window. history. back()" style="text-align: center;cursor: pointer;">
+            <img class="material-icons" src="./../../files/seta.png"  alt="voltar">                                
+            
+          </span>
+        </footer>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECICLE+</title>
+    <link rel="stylesheet" href="./source/mdl/material.min.css">
+    <script src="./source/mdl/material.min.js"></script>
+    <link rel="stylesheet" href="./source/mdl/fonts.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+
+<body>
+    <style>
+        .demo-layout-transparent {
+            background: url('./source/files/sand.png') center / cover;
+        }
+
+        .demo-layout-transparent .mdl-layout__header,
+        .demo-layout-transparent .mdl-layout__drawer-button,
+        ul.mdl-list li span button {
+            color: white;
+        }
+
+        .demo-list-two {
+            width: 300px;
+        }
+
+        img.material-icons {
+            width: 30px;
+            height: 30px;
+            background-image: linear-gradient(to bottom, #00FF80, #58D3F7 130%);
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 16px;
+        }
+    </style>
+
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">RECICLE</span>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">RECICLE</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Login</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                    <ul class="demo-list-two mdl-list">
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/lixeira.png" alt="lixeira">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="./source/view/posts/?item=classificar">
+                                    Classificação do lixo
+                                </a>
+                            </span>
+                        </li>
+                        
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/reciclar.png" alt="reciclar">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="./source/view/posts/?item=reutilizar"></button>
+                                    Reutilize
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons  mdl-list__item-avatar">person</i>
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="./source/view/posts/?item=curiosidade"></button>
+                                    Curiosidades
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <img class="material-icons" src="./source/files/caminhao-de-lixo_semLinha.png" alt="lixeiro">
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="./source/view/posts/?item=lixo"></button>
+                                    Lixo em Panambi
+                                </a>
+                            </span>
+                        </li>
+
+                        <li class="mdl-list__item">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons  mdl-list__item-avatar">person</i>
+                                <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="./source/view/posts/?item=contato"></button>
+                                    Entre em contato
+                                </a>
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./source/script/app.js"></script>
+</body>
+
+</html>

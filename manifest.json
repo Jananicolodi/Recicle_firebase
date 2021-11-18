@@ -1,0 +1,30 @@
+{
+    "dir": "ltr",
+    "lang": "pt-br",
+    "name": "RECLICLE+",
+    "short_name": "RECLICLE+",
+    "description": "Reciclagem de lixo",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "#009688",
+    "background_color": "#009688",
+    "start_url": "./index.html",
+    "icons": [
+        {
+            "src": "./source/files/logo-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./source/files/logo-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "author": "Janaina",
+    "developer": {
+        "name": "Janaina"
+    },
+    "version": "0.1"
+}
